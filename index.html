@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -16,35 +15,82 @@
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    <!-- Sign-up form start -->
+    <article class="subscription-card">
+      <picture>
+        <source
+          srcset="./assets/images/illustration-sign-up-desktop.svg"
+          media="(min-width: 768px)"
+        />
+        <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="Sign-up illustration"
+        />
+      </picture>
+      <section class="card-content-container">
+        <!-- <section class="subscribtion-info"> -->
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li>
+            <img src="./assets/images/icon-list.svg" alt="" />Product discovery
+            and building what matters
+          </li>
+          <li>
+            <img src="./assets/images/icon-list.svg" alt="" />Measuring to
+            ensure updates are a success
+          </li>
+          <li>
+            <img src="./assets/images/icon-list.svg" alt="" />And much more!
+          </li>
+        </ul>
+        <!-- </section> -->
+        <form class="subscription-form" novalidate>
+          <div class="form-status">
+            <label for="email-input">Email address</label>
+            <span class="error"></span>
+          </div>
+          <input
+            type="email"
+            name="email"
+            required
+            class="form__email-input"
+            minlength="8"
+            id="email-input"
+            placeholder="email@company.com"
+          />
+          <div class="button-container">
+            <button type="submit" id="subscribe-button">
+              Subscribe to monthly newsletter
+            </button>
+          </div>
+        </form>
+      </section>
+    </article>
 
-    Stay updated! Join 60,000+ product managers receiving monthly updates on:
-    Product discovery and building what matters Measuring to ensure updates are
-    a success And much more! Email address email@company.com Subscribe to
-    monthly newsletter
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-
-    Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message
-
-    <!-- Success message end -->
+    <div class="subscription-success-modal hidden">
+      <section class="modal__card">
+        <div class="success-image">
+          <img src="./assets/images/icon-success.svg" alt="Success" />
+        </div>
+        <h2>Thanks for subscribing!</h2>
+        <p>
+          A confirmation email has been sent to
+          <strong>ash@loremcompany.com</strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+        <div class="button-container">
+          <button
+            type="button"
+            class="modal__dismiss-button"
+            id="dismiss-button"
+          >
+            Dismiss message
+          </button>
+        </div>
+      </section>
+    </div>
 
     <div class="attribution">
       Challenge by
