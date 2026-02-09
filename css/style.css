@@ -55,7 +55,7 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-button:active {
+button:hover {
   background-image: linear-gradient(
     90deg,
     var(--red-violet),
@@ -64,7 +64,16 @@ button:active {
   );
 }
 
-button:active::before {
+button:active {
+  background-image: linear-gradient(
+    90deg,
+    var(--red-orange),
+    var(--red),
+    var(--red-violet)
+  );
+}
+
+button:hover:before {
   content: "";
   position: absolute;
   bottom: -5px;
