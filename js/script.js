@@ -35,9 +35,9 @@ dismissButton.addEventListener("click", () => {
 
 function showError(input, errorElement) {
   if (input.validity.valueMissing) {
-    errorElement.textContent = "You need to enter an email address.";
+    errorElement.textContent = "Email required";
   } else if (input.validity.typeMismatch) {
-    errorElement.textContent = "Entered value needs to be an email address.";
+    errorElement.textContent = "Entered value needs to be an email address";
   } else if (input.validity.tooShort) {
     errorElement.textContent = `Email should be at least ${input.minLength} characters; 
     you entered ${input.value.length}.`;
