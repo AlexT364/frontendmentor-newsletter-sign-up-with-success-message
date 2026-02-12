@@ -52,6 +52,8 @@ button {
   font-size: 0.9rem;
   padding: 1.5rem 2rem;
 
+  transition: box-shadow 0.4s;
+
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -62,6 +64,8 @@ button:hover {
     var(--red),
     var(--red-orange)
   );
+
+  box-shadow: 0px 5px 20px 0px var(--red-violet);
 }
 
 button:active {
@@ -71,24 +75,6 @@ button:active {
     var(--red),
     var(--red-violet)
   );
-}
-
-button:hover:before {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background: linear-gradient(
-    to right,
-    var(--red-violet),
-    var(--red),
-    var(--red-orange)
-  );
-  border-radius: 10px;
-  z-index: 20;
-  filter: blur(15px);
 }
 
 body {
@@ -145,13 +131,9 @@ picture img {
 
 .form-status {
   display: flex;
+  align-items: end;
   font-size: 0.8125rem;
   width: 100%;
-}
-
-.form-status label,
-.form-status span {
-  flex: 1;
 }
 
 .form-status label {
@@ -159,6 +141,8 @@ picture img {
 }
 
 .error.active {
+  margin-left: auto;
+  max-width: 50%;
   font-weight: bold;
   color: var(--red);
 }
@@ -169,6 +153,12 @@ picture img {
   border: 1px solid var(--grey);
   border-radius: 10px;
   margin-top: 0.5rem;
+
+  transition: all 0.4s;
+}
+
+.form__email-input[type="email"]:focus {
+  outline: 1px solid var(--grey);
 }
 
 .form__email-input[type="email"]:user-invalid {
@@ -178,8 +168,7 @@ picture img {
   color: var(--red);
 }
 
-.button-container {
-  position: relative;
+.subscription-form > button {
   margin-top: 1.5rem;
 }
 
